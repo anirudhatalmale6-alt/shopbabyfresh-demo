@@ -10,19 +10,22 @@
 <meta property="og:image" content="https://shopbabyfresh.com/assets/og-babyfresh.jpg">
 <meta property="og:url" content="https://shopbabyfresh.com/">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0E3B4A">
+<meta name="theme-color" content="#0A61B0">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0E3B4A; --ink-soft:#40626F; --cream:#FFFCF6; --white:#fff;
-  --mint:#5FCBB0; --mint-d:#3FAE93; --sky:#7FC0EE; --sun:#FFC648; --blush:#FFAFC0;
-  --line:#E9E2D6;
-  --shadow-sm:0 2px 8px rgba(14,59,74,.06), 0 8px 24px rgba(14,59,74,.05);
-  --shadow:0 6px 18px rgba(14,59,74,.08), 0 22px 48px rgba(14,59,74,.09);
-  --shadow-lg:0 10px 26px rgba(14,59,74,.10), 0 34px 70px rgba(14,59,74,.12);
+  /* sampled straight from the Baby Fresh logo */
+  --blue:#0A61B0; --blue-d:#034A98; --blue-l:#4FA3E3;
+  --green:#6CBD30; --green-d:#55A020; --green-l:#9BD64F;
+  --ink:#0C2F5A; --ink-soft:#4A6484;
+  --cream:#F8FBFA; --white:#fff; --line:#E4EAE6;
+  --shadow-sm:0 2px 8px rgba(12,47,90,.06), 0 8px 24px rgba(12,47,90,.05);
+  --shadow:0 6px 18px rgba(12,47,90,.08), 0 22px 48px rgba(12,47,90,.09);
+  --shadow-lg:0 10px 26px rgba(12,47,90,.10), 0 34px 70px rgba(12,47,90,.12);
   --r:26px; --r-lg:38px;
 }
 *{box-sizing:border-box}
@@ -40,39 +43,37 @@ img{max-width:100%; display:block}
 .sec{position:relative; padding:104px 0}
 .eyebrow{
   display:inline-flex; align-items:center; gap:9px; font-weight:900; font-size:12.5px;
-  letter-spacing:.16em; text-transform:uppercase; color:var(--mint-d);
+  letter-spacing:.16em; text-transform:uppercase; color:var(--green-d);
 }
-.eyebrow::before{content:""; width:26px; height:3px; border-radius:3px; background:linear-gradient(90deg,var(--mint),var(--sky))}
+.eyebrow::before{content:""; width:26px; height:3px; border-radius:3px; background:linear-gradient(90deg,var(--green),var(--blue))}
 .h2{font-size:clamp(31px,4.3vw,50px)}
 .lead{color:var(--ink-soft); font-size:clamp(16.5px,1.5vw,19px); max-width:60ch}
 
 /* ---------- decorative ---------- */
 .blob{position:absolute; border-radius:50%; filter:blur(46px); opacity:.5; pointer-events:none; z-index:0}
 .grain{
-  position:fixed; inset:0; pointer-events:none; z-index:999; opacity:.028; mix-blend-mode:multiply;
+  position:fixed; inset:0; pointer-events:none; z-index:999; opacity:.026; mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
 }
 .wave{display:block; width:100%; height:auto; margin-bottom:-2px}
 
 /* ---------- nav ---------- */
-header{position:sticky; top:0; z-index:80; padding:14px 0; transition:padding .25s}
-header::before{content:""; position:absolute; inset:0; background:rgba(255,252,246,.82); backdrop-filter:blur(14px); opacity:0; transition:opacity .3s}
-header.stuck::before{opacity:1; box-shadow:0 6px 24px rgba(14,59,74,.07)}
+header{position:sticky; top:0; z-index:80; padding:12px 0; transition:padding .25s}
+header::before{content:""; position:absolute; inset:0; background:rgba(255,255,255,.86); backdrop-filter:blur(14px); opacity:0; transition:opacity .3s}
+header.stuck::before{opacity:1; box-shadow:0 6px 24px rgba(12,47,90,.07)}
 .nav{position:relative; display:flex; align-items:center; gap:22px}
-.logo{display:flex; align-items:center; gap:11px; text-decoration:none; flex:0 0 auto}
-.logo .mark{width:44px; height:44px; flex:0 0 auto}
-.logo b{font-family:'Fredoka'; font-weight:700; font-size:23px; letter-spacing:-.02em; line-height:1}
-.logo small{display:block; font-size:9.5px; font-weight:900; letter-spacing:.19em; color:var(--mint-d); text-transform:uppercase; margin-top:2px}
+.logo{display:block; flex:0 0 auto; line-height:0}
+.logo img{width:196px; height:auto}
 .menu{display:flex; gap:6px; margin-left:auto; align-items:center}
 .menu a{
   text-decoration:none; font-weight:700; font-size:14.5px; padding:10px 15px; border-radius:999px;
   color:var(--ink); transition:background .2s,color .2s; white-space:nowrap;
 }
-.menu a:hover{background:rgba(95,203,176,.16)}
-.menu a.cta{background:var(--ink); color:#fff; padding:11px 21px; box-shadow:var(--shadow-sm)}
-.menu a.cta:hover{background:var(--mint-d)}
+.menu a:hover{background:rgba(108,189,48,.16)}
+.menu a.cta{background:var(--blue); color:#fff; padding:11px 21px; box-shadow:var(--shadow-sm)}
+.menu a.cta:hover{background:var(--blue-d)}
 .burger{display:none; margin-left:auto; width:46px; height:46px; border:0; border-radius:14px; background:var(--white); box-shadow:var(--shadow-sm); cursor:pointer}
-.burger span{display:block; width:19px; height:2.2px; border-radius:2px; background:var(--ink); margin:4px auto; transition:.25s}
+.burger span{display:block; width:19px; height:2.2px; border-radius:2px; background:var(--blue); margin:4px auto; transition:.25s}
 .burger.on span:nth-child(1){transform:translateY(6.2px) rotate(45deg)}
 .burger.on span:nth-child(2){opacity:0}
 .burger.on span:nth-child(3){transform:translateY(-6.2px) rotate(-45deg)}
@@ -84,27 +85,28 @@ header.stuck::before{opacity:1; box-shadow:0 6px 24px rgba(14,59,74,.07)}
   transition:transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .22s, background .22s, color .22s;
 }
 .btn:hover{transform:translateY(-3px)}
-.btn-mint{background:var(--mint); color:#06312A; box-shadow:0 10px 22px rgba(95,203,176,.42)}
-.btn-mint:hover{box-shadow:0 16px 30px rgba(95,203,176,.5)}
-.btn-ink{background:var(--ink); color:#fff; box-shadow:0 10px 22px rgba(14,59,74,.28)}
-.btn-ink:hover{box-shadow:0 16px 30px rgba(14,59,74,.34)}
+.btn-green{background:var(--green); color:#123D06; box-shadow:0 10px 22px rgba(108,189,48,.40)}
+.btn-green:hover{background:var(--green-d); color:#fff; box-shadow:0 16px 30px rgba(108,189,48,.46)}
+.btn-blue{background:var(--blue); color:#fff; box-shadow:0 10px 22px rgba(10,97,176,.32)}
+.btn-blue:hover{background:var(--blue-d); box-shadow:0 16px 30px rgba(10,97,176,.38)}
 .btn-wa{background:#25D366; color:#04331A; box-shadow:0 10px 22px rgba(37,211,102,.36)}
-.btn-line{background:transparent; border-color:rgba(14,59,74,.22); color:var(--ink)}
-.btn-line:hover{border-color:var(--ink); background:rgba(14,59,74,.04)}
+.btn-line{background:transparent; border-color:rgba(10,97,176,.28); color:var(--blue-d)}
+.btn-line:hover{border-color:var(--blue); background:rgba(10,97,176,.06)}
 .btn-sm{padding:11px 19px; font-size:14.5px}
 
 /* ---------- hero ---------- */
-.hero{position:relative; padding:70px 0 30px; overflow:hidden}
-.hero .b1{width:620px; height:620px; background:var(--mint); top:-230px; right:-160px; opacity:.34}
-.hero .b2{width:460px; height:460px; background:var(--sun); bottom:-200px; left:-170px; opacity:.30}
-.hero .b3{width:360px; height:360px; background:var(--sky); top:180px; left:38%; opacity:.24}
-.hero-grid{position:relative; z-index:1; display:grid; grid-template-columns:1.06fr .94fr; gap:52px; align-items:center}
+.hero{position:relative; padding:64px 0 30px; overflow:hidden}
+.hero .b1{width:620px; height:620px; background:var(--blue-l); top:-240px; right:-160px; opacity:.30}
+.hero .b2{width:460px; height:460px; background:var(--green-l); bottom:-200px; left:-170px; opacity:.34}
+.hero .b3{width:360px; height:360px; background:var(--green); top:190px; left:40%; opacity:.15}
+.hero-grid{position:relative; z-index:1; display:grid; grid-template-columns:1.04fr .96fr; gap:52px; align-items:center}
 .hero h1{font-size:clamp(38px,5.6vw,66px); font-weight:600}
 .hero h1 .g{
-  background:linear-gradient(100deg,var(--mint-d),var(--sky) 55%,var(--mint-d));
+  background:linear-gradient(100deg,var(--green-d),var(--green) 45%,var(--blue) 95%);
   -webkit-background-clip:text; background-clip:text; color:transparent;
 }
-.hero .sub{font-family:'Fredoka'; font-weight:500; font-size:clamp(17px,1.8vw,21px); color:var(--mint-d); margin-top:18px}
+.hero .sub{font-family:'Fredoka'; font-weight:500; font-size:clamp(17px,1.8vw,21px); color:var(--blue); margin-top:18px}
+.hero .subfr{font-size:15px; font-style:italic; color:var(--green-d); margin-top:5px}
 .hero .body{margin-top:14px; color:var(--ink-soft); font-size:17.5px; max-width:54ch}
 .hero-cta{display:flex; flex-wrap:wrap; gap:14px; margin-top:32px}
 .pills{display:flex; flex-wrap:wrap; gap:10px; margin-top:34px}
@@ -116,14 +118,13 @@ header.stuck::before{opacity:1; box-shadow:0 6px 24px rgba(14,59,74,.07)}
 .pill svg{width:12px; height:12px}
 
 /* hero art */
-.art{position:relative; display:grid; place-items:center; min-height:440px}
+.art{position:relative; display:grid; place-items:center; min-height:452px}
 .art .disc{
-  position:absolute; width:min(430px,88%); aspect-ratio:1; border-radius:50%;
-  background:radial-gradient(circle at 32% 28%,#fff,rgba(255,255,255,0) 62%),
-             linear-gradient(150deg,var(--sky),var(--mint));
-  box-shadow:var(--shadow-lg);
+  position:absolute; width:min(452px,92%); aspect-ratio:1; border-radius:50%;
+  background:radial-gradient(circle at 50% 46%,#fff 42%,#EFF7FF 68%,#E7F4DC 100%);
+  box-shadow:var(--shadow-lg), inset 0 0 0 10px rgba(255,255,255,.9);
 }
-.art .pack{position:relative; z-index:2; width:min(300px,68%); filter:drop-shadow(0 26px 34px rgba(14,59,74,.24))}
+.art .badge{position:relative; z-index:2; width:min(330px,74%); filter:drop-shadow(0 22px 30px rgba(12,47,90,.22))}
 .chip{
   position:absolute; z-index:3; background:var(--white); border-radius:20px; padding:12px 17px;
   box-shadow:var(--shadow); display:flex; align-items:center; gap:11px; animation:float 5.4s ease-in-out infinite;
@@ -131,14 +132,14 @@ header.stuck::before{opacity:1; box-shadow:0 6px 24px rgba(14,59,74,.07)}
 .chip b{font-family:'Fredoka'; font-weight:600; font-size:16px; line-height:1.1; display:block}
 .chip span{font-size:11.5px; font-weight:700; color:var(--ink-soft); letter-spacing:.05em; text-transform:uppercase}
 .chip .ic{width:36px; height:36px; border-radius:12px; display:grid; place-items:center; flex:0 0 auto}
-.chip.c1{top:6%; left:-2%; animation-delay:-.6s}
-.chip.c2{bottom:12%; right:-3%; animation-delay:-2.7s}
-.chip.c3{bottom:-2%; left:8%; animation-delay:-4.1s}
+.chip.c1{top:4%; left:-3%; animation-delay:-.6s}
+.chip.c2{bottom:14%; right:-4%; animation-delay:-2.7s}
+.chip.c3{bottom:-1%; left:6%; animation-delay:-4.1s}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
 @media (prefers-reduced-motion:reduce){.chip{animation:none}}
 
 /* ---------- products ---------- */
-.products{background:linear-gradient(180deg,#F4FBF9,#FFFCF6)}
+.products{background:linear-gradient(180deg,#F1F8EC,#F8FBFA)}
 .sec-head{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:26px; margin-bottom:46px}
 .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(268px,1fr)); gap:26px}
 .card{
@@ -149,22 +150,21 @@ header.stuck::before{opacity:1; box-shadow:0 6px 24px rgba(14,59,74,.07)}
 .card .thumb{
   border-radius:24px; aspect-ratio:4/3.15; display:grid; place-items:center; margin-bottom:19px; position:relative; overflow:hidden;
 }
-.card .thumb svg{width:64%; height:auto; filter:drop-shadow(0 14px 18px rgba(14,59,74,.16))}
+.card .thumb svg{width:64%; height:auto; filter:drop-shadow(0 14px 18px rgba(12,47,90,.16))}
 .card .tag{
   position:absolute; top:12px; left:12px; background:rgba(255,255,255,.94); border-radius:999px;
-  padding:5px 12px; font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--ink);
+  padding:5px 12px; font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--blue-d);
 }
 .card h3{font-size:21px; margin-bottom:7px}
 .card .desc{color:var(--ink-soft); font-size:15px; margin-bottom:15px}
 .spec{display:grid; grid-template-columns:auto 1fr; gap:6px 14px; font-size:14.5px; padding:14px 0; border-top:1px dashed var(--line); border-bottom:1px dashed var(--line); margin-bottom:16px}
 .spec dt{font-weight:900; font-size:11px; letter-spacing:.11em; text-transform:uppercase; color:var(--ink-soft); align-self:center}
 .spec dd{margin:0; font-weight:700}
-.price{font-family:'Fredoka'; font-weight:600; font-size:26px; margin-bottom:16px}
-.price small{font-size:13px; font-weight:400; color:var(--ink-soft); font-family:'Nunito Sans'}
+.price{font-family:'Fredoka'; font-weight:600; font-size:26px; margin-bottom:16px; color:var(--blue-d)}
 .card .acts{display:flex; gap:9px; margin-top:auto}
 .card .acts .btn{flex:1}
 .note{
-  margin-top:34px; background:var(--white); border:1px solid var(--line); border-left:5px solid var(--sun);
+  margin-top:34px; background:var(--white); border:1px solid var(--line); border-left:5px solid var(--green);
   border-radius:20px; padding:20px 24px; display:flex; gap:15px; align-items:flex-start; box-shadow:var(--shadow-sm);
 }
 .note svg{flex:0 0 auto; width:24px; height:24px; margin-top:2px}
@@ -173,31 +173,30 @@ header.stuck::before{opacity:1; box-shadow:0 6px 24px rgba(14,59,74,.07)}
 
 /* ---------- why ---------- */
 .why{position:relative; overflow:hidden}
-.why .b1{width:520px; height:520px; background:var(--blush); top:-180px; left:-180px; opacity:.30}
-.why .b2{width:480px; height:480px; background:var(--sky); bottom:-200px; right:-160px; opacity:.26}
+.why .b1{width:520px; height:520px; background:var(--green-l); top:-180px; left:-180px; opacity:.26}
+.why .b2{width:480px; height:480px; background:var(--blue-l); bottom:-200px; right:-160px; opacity:.24}
 .vals{display:grid; grid-template-columns:repeat(auto-fit,minmax(238px,1fr)); gap:24px; position:relative; z-index:1}
-.val{background:var(--white); border-radius:var(--r); padding:32px 26px; border:1px solid var(--line); box-shadow:var(--shadow-sm); position:relative; overflow:hidden}
-.val::after{content:""; position:absolute; right:-46px; top:-46px; width:120px; height:120px; border-radius:50%; opacity:.14}
-.val .ic{width:60px; height:60px; border-radius:20px; display:grid; place-items:center; margin-bottom:19px; position:relative; z-index:1}
+.val{background:var(--white); border-radius:var(--r); padding:32px 26px; border:1px solid var(--line); box-shadow:var(--shadow-sm)}
+.val .ic{width:60px; height:60px; border-radius:20px; display:grid; place-items:center; margin-bottom:19px}
 .val .ic svg{width:30px; height:30px}
-.val h3{font-size:15px; letter-spacing:.13em; text-transform:uppercase; font-weight:700; margin-bottom:9px; position:relative; z-index:1}
-.val p{color:var(--ink-soft); font-size:15.5px; position:relative; z-index:1}
+.val h3{font-size:15px; letter-spacing:.13em; text-transform:uppercase; font-weight:700; margin-bottom:9px}
+.val p{color:var(--ink-soft); font-size:15.5px}
 .back{
   margin-top:52px; position:relative; z-index:1; border-radius:var(--r-lg); overflow:hidden;
-  background:linear-gradient(125deg,var(--ink),#16556B 58%,#1C6B7E); color:#fff;
+  background:linear-gradient(125deg,var(--blue-d),var(--blue) 62%,#0B76CE); color:#fff;
   padding:clamp(38px,5vw,62px); box-shadow:var(--shadow-lg); text-align:center;
 }
 .back::before{content:""; position:absolute; inset:0; background:
-  radial-gradient(circle at 12% 22%,rgba(95,203,176,.42),transparent 42%),
-  radial-gradient(circle at 88% 78%,rgba(255,198,72,.30),transparent 46%);}
+  radial-gradient(circle at 12% 22%,rgba(108,189,48,.46),transparent 44%),
+  radial-gradient(circle at 88% 78%,rgba(155,214,79,.30),transparent 46%);}
 .back>*{position:relative}
 .back h3{font-size:clamp(28px,3.6vw,42px); margin-bottom:16px}
-.back p{color:rgba(255,255,255,.86); max-width:62ch; margin-inline:auto; font-size:17.5px}
+.back p{color:rgba(255,255,255,.9); max-width:62ch; margin-inline:auto; font-size:17.5px}
 .flagline{display:flex; width:112px; height:6px; border-radius:6px; overflow:hidden; margin:0 auto 24px}
 .flagline i{flex:1}
 
 /* ---------- distributor ---------- */
-.dist{background:linear-gradient(180deg,#FFFCF6,#FFF6EA)}
+.dist{background:linear-gradient(180deg,#F8FBFA,#EFF6FC)}
 .dist-grid{display:grid; grid-template-columns:.95fr 1.05fr; gap:52px; align-items:start}
 .who{display:flex; flex-wrap:wrap; gap:10px; margin-top:26px}
 .who span{background:var(--white); border:1px solid var(--line); border-radius:999px; padding:9px 16px; font-weight:700; font-size:14px; box-shadow:var(--shadow-sm)}
@@ -209,19 +208,19 @@ header.stuck::before{opacity:1; box-shadow:0 6px 24px rgba(14,59,74,.07)}
 .field.full{grid-column:1/-1}
 .field label{font-size:12px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft)}
 .field input,.field select,.field textarea{
-  font-family:inherit; font-size:16px; color:var(--ink); background:#FBFAF6;
+  font-family:inherit; font-size:16px; color:var(--ink); background:#F7FAF9;
   border:1.6px solid var(--line); border-radius:15px; padding:13px 15px; width:100%; transition:border-color .2s, box-shadow .2s, background .2s;
 }
 .field textarea{min-height:104px; resize:vertical}
 .field input:focus,.field select:focus,.field textarea:focus{
-  outline:0; background:#fff; border-color:var(--mint); box-shadow:0 0 0 4px rgba(95,203,176,.18);
+  outline:0; background:#fff; border-color:var(--green); box-shadow:0 0 0 4px rgba(108,189,48,.18);
 }
 .form .btn{width:100%; margin-top:22px}
 .form .fine{font-size:13px; color:var(--ink-soft); text-align:center; margin-top:13px}
 
 /* ---------- contact ---------- */
 .contact{position:relative; overflow:hidden}
-.contact .b1{width:560px; height:560px; background:var(--mint); top:-220px; right:-200px; opacity:.28}
+.contact .b1{width:560px; height:560px; background:var(--green-l); top:-220px; right:-200px; opacity:.26}
 .c-grid{display:grid; grid-template-columns:1.08fr .92fr; gap:46px; align-items:center; position:relative; z-index:1}
 .info{display:grid; gap:14px; margin-top:32px}
 .info a,.info div{
@@ -243,15 +242,18 @@ header.stuck::before{opacity:1; box-shadow:0 6px 24px rgba(14,59,74,.07)}
 .c-cta{display:flex; flex-wrap:wrap; gap:13px; margin-top:30px}
 
 /* ---------- footer ---------- */
-footer{background:var(--ink); color:rgba(255,255,255,.72); padding:60px 0 32px; position:relative}
+footer{background:#0B2E5C; color:rgba(255,255,255,.74); padding:56px 0 32px; position:relative}
 .f-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:38px; padding-bottom:34px; border-bottom:1px solid rgba(255,255,255,.14)}
-footer .logo b,footer h4{color:#fff}
-footer h4{font-size:13px; letter-spacing:.13em; text-transform:uppercase; margin-bottom:16px}
+.f-logo{background:#fff; border-radius:22px; padding:16px 20px; display:inline-block; box-shadow:var(--shadow)}
+.f-logo img{width:230px; height:auto}
+footer h4{font-size:13px; letter-spacing:.13em; text-transform:uppercase; margin-bottom:16px; color:#fff}
 .f-links{display:grid; gap:10px}
 .f-links a{text-decoration:none; font-size:15px; transition:color .2s}
-.f-links a:hover{color:var(--mint)}
+.f-links a:hover{color:var(--green-l)}
 .f-bot{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; padding-top:24px; font-size:13.5px}
-footer p.tag{font-size:15px; max-width:38ch; margin-top:14px}
+footer p.tag{font-size:15px; max-width:40ch; margin-top:16px}
+footer p.tagfr{font-size:14.5px; font-style:italic; color:var(--green-l); margin-top:8px}
+footer .kw{font-size:11.5px; letter-spacing:.24em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-top:12px}
 
 /* ---------- float wa ---------- */
 .fab{
@@ -276,6 +278,7 @@ footer p.tag{font-size:15px; max-width:38ch; margin-top:14px}
 }
 @media (max-width:760px){
   .burger{display:block}
+  .logo img{width:164px}
   .menu{
     position:absolute; top:calc(100% + 12px); left:0; right:0; flex-direction:column; align-items:stretch; gap:4px;
     background:var(--white); border:1px solid var(--line); border-radius:24px; padding:14px; box-shadow:var(--shadow-lg);
@@ -286,6 +289,7 @@ footer p.tag{font-size:15px; max-width:38ch; margin-top:14px}
   .menu a.cta{text-align:center; justify-content:center; margin-top:6px}
   .fields{grid-template-columns:1fr}
   .f-grid{grid-template-columns:1fr; gap:30px}
+  .f-logo img{width:200px}
   .chip.c1{left:-4px; top:0}
   .chip.c2{right:-4px}
   .chip b{font-size:14.5px}
@@ -304,16 +308,7 @@ footer p.tag{font-size:15px; max-width:38ch; margin-top:14px}
 <!-- ============ NAV ============ -->
 <header id="top">
   <div class="wrap nav">
-    <a class="logo" href="#top">
-      <svg class="mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <rect x="2" y="2" width="60" height="60" rx="19" fill="#0E3B4A"/>
-        <path d="M20 41c0-8.3 5.4-15 12-15s12 6.7 12 15" stroke="#5FCBB0" stroke-width="4.6" stroke-linecap="round"/>
-        <circle cx="32" cy="21" r="6.2" fill="#FFC648"/>
-        <circle cx="24.5" cy="44.5" r="3" fill="#7FC0EE"/>
-        <circle cx="39.5" cy="44.5" r="3" fill="#FFAFC0"/>
-      </svg>
-      <span><b>Baby Fresh</b><small>Shop Baby Fresh</small></span>
-    </a>
+    <a class="logo" href="#top"><img src="assets/logo-lockup.png" alt="Baby Fresh" width="600" height="273"></a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="menu" id="menu">
       <a href="#top">Home</a>
@@ -334,31 +329,32 @@ footer p.tag{font-size:15px; max-width:38ch; margin-top:14px}
       <span class="eyebrow">Baby Fresh is back</span>
       <h1 style="margin-top:16px">Freshness, Softness &amp; <span class="g">Protection</span> for Your Baby</h1>
       <p class="sub">More Freshness. More Softness. More Protection.</p>
+      <p class="subfr">Baby Fresh, plus de fraîcheur, de douceur et de résistance&nbsp;!</p>
       <p class="body">Baby Fresh provides quality baby-care products designed to keep babies comfortable, dry, and protected throughout the day.</p>
       <div class="hero-cta">
-        <a class="btn btn-mint" href="#products">Shop Products</a>
-        <a class="btn btn-ink" href="#" data-wa="Hello Baby Fresh! I would like to place an order.">Order Now</a>
+        <a class="btn btn-green" href="#products">Shop Products</a>
+        <a class="btn btn-blue" href="#" data-wa="Hello Baby Fresh! I would like to place an order.">Order Now</a>
       </div>
       <div class="pills" id="trust"></div>
     </div>
     <div class="art">
       <div class="disc"></div>
-      <div class="pack" id="heroPack"></div>
+      <img class="badge" src="assets/logo-mark.png" alt="Baby Fresh" width="300" height="364">
       <div class="chip c1">
-        <span class="ic" style="background:rgba(95,203,176,.18)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#3FAE93" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M12 3s6 5.2 6 10a6 6 0 0 1-12 0c0-4.8 6-10 6-10z"/></svg>
+        <span class="ic" style="background:rgba(10,97,176,.14)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0A61B0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M12 3s6 5.2 6 10a6 6 0 0 1-12 0c0-4.8 6-10 6-10z"/></svg>
         </span>
         <span><b>Stays Dry</b><span>All day long</span></span>
       </div>
       <div class="chip c2">
-        <span class="ic" style="background:rgba(255,198,72,.22)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#D99B00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        <span class="ic" style="background:rgba(108,189,48,.18)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#55A020" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg>
         </span>
         <span><b>Gentle</b><span>On baby skin</span></span>
       </div>
       <div class="chip c3">
-        <span class="ic" style="background:rgba(127,192,238,.22)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#3D8DC6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M12 2.6 4.2 6v6c0 4.8 3.3 8.7 7.8 9.8 4.5-1.1 7.8-5 7.8-9.8V6L12 2.6z"/></svg>
+        <span class="ic" style="background:rgba(79,163,227,.20)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0A61B0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M12 2.6 4.2 6v6c0 4.8 3.3 8.7 7.8 9.8 4.5-1.1 7.8-5 7.8-9.8V6L12 2.6z"/></svg>
         </span>
         <span><b>Trusted</b><span>By parents</span></span>
       </div>
@@ -366,7 +362,7 @@ footer p.tag{font-size:15px; max-width:38ch; margin-top:14px}
   </div>
 </section>
 
-<svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46c180-42 360-42 540-14s360 66 540 40 300-52 360-62v80H0z" fill="#F4FBF9"/></svg>
+<svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46c180-42 360-42 540-14s360 66 540 40 300-52 360-62v80H0z" fill="#F1F8EC"/></svg>
 
 <!-- ============ PRODUCTS ============ -->
 <section class="sec products" id="products">
@@ -380,7 +376,7 @@ footer p.tag{font-size:15px; max-width:38ch; margin-top:14px}
     </div>
     <div class="cards" id="cards"></div>
     <div class="note rv">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#E0A400" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9.4"/><path d="M12 7.6v5.2M12 16.4h.01"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#55A020" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9.4"/><path d="M12 7.6v5.2M12 16.4h.01"/></svg>
       <p><b>Ordering is by WhatsApp for now.</b> Tap any button and it opens a chat with the product already filled in — nothing for the customer to type. The full shopping cart, checkout and online payment comes in Phase&nbsp;2.</p>
     </div>
   </div>
@@ -416,7 +412,7 @@ footer p.tag{font-size:15px; max-width:38ch; margin-top:14px}
         <span>🛍️ Retailers</span><span>📦 Wholesalers</span><span>🤝 Independent resellers</span>
       </div>
       <div style="margin-top:30px">
-        <a class="btn btn-ink" href="#distForm">Become a Distributor</a>
+        <a class="btn btn-blue" href="#distForm">Become a Distributor</a>
       </div>
     </div>
     <form class="form rv" id="distForm" novalidate>
@@ -478,17 +474,10 @@ footer p.tag{font-size:15px; max-width:38ch; margin-top:14px}
   <div class="wrap">
     <div class="f-grid">
       <div>
-        <a class="logo" href="#top" style="color:#fff">
-          <svg class="mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <rect x="2" y="2" width="60" height="60" rx="19" fill="#12495B"/>
-            <path d="M20 41c0-8.3 5.4-15 12-15s12 6.7 12 15" stroke="#5FCBB0" stroke-width="4.6" stroke-linecap="round"/>
-            <circle cx="32" cy="21" r="6.2" fill="#FFC648"/>
-            <circle cx="24.5" cy="44.5" r="3" fill="#7FC0EE"/>
-            <circle cx="39.5" cy="44.5" r="3" fill="#FFAFC0"/>
-          </svg>
-          <span><b>Baby Fresh</b><small>Shop Baby Fresh</small></span>
-        </a>
+        <a class="f-logo" href="#top"><img src="assets/logo-lockup.png" alt="Baby Fresh" width="600" height="273"></a>
         <p class="tag">More Freshness. More Softness. More Protection. Serving families across Haiti.</p>
+        <p class="tagfr">Baby Fresh, plus de fraîcheur, de douceur et de résistance&nbsp;!</p>
+        <p class="kw">Couches • Douceur • Confiance</p>
       </div>
       <div>
         <h4>Explore</h4>
@@ -528,88 +517,85 @@ const BIZ = {
 
 const PRODUCTS = [
   { name:"Baby Fresh Diapers", tag:"Best seller", size:"Small / Medium / Large / XL",
-    qty:"30 diapers per pack", price:"450 HTG", cur:"",
+    qty:"30 diapers per pack", price:"450 HTG",
     desc:"Soft, breathable diapers with a highly absorbent core to help keep baby dry day and night.",
-    art:"diaper", c1:"#E6F7F2", c2:"#CFEFE6" },
+    art:"diaper", c1:"#EDF8E2", c2:"#D9F0C2" },
   { name:"Baby Wipes", tag:"", size:"Standard pack",
-    qty:"80 wipes per pack", price:"180 HTG", cur:"",
+    qty:"80 wipes per pack", price:"180 HTG",
     desc:"Thick, gentle wipes for quick clean-ups at every change — kind to delicate skin.",
-    art:"wipes", c1:"#EAF4FD", c2:"#D5E9FA" },
+    art:"wipes", c1:"#E6F1FC", c2:"#CDE3F7" },
   { name:"Baby Care Products", tag:"", size:"Assorted",
-    qty:"Lotion • Powder • Oil • Soap", price:"From 150 HTG", cur:"",
+    qty:"Lotion • Powder • Oil • Soap", price:"From 150 HTG",
     desc:"Everyday essentials to keep baby clean, soft and comfortable after every bath.",
-    art:"care", c1:"#FFF3E0", c2:"#FFE6C2" },
+    art:"care", c1:"#F3FBE7", c2:"#E0F4C7" },
   { name:"Value Packs & Special Offers", tag:"Save more", size:"Multi-pack",
-    qty:"Bundles for families & resellers", price:"Ask for pricing", cur:"",
+    qty:"Bundles for families & resellers", price:"Ask for pricing",
     desc:"Buy more, pay less. Bulk bundles for growing families, retailers and distributors.",
-    art:"value", c1:"#FFEFF3", c2:"#FFDCE4" }
+    art:"value", c1:"#E9F2FB", c2:"#CFE2F5" }
 ];
 
 const TRUST = ["Soft","Absorbent","Comfortable","Reliable"];
 
 const VALUES = [
-  { t:"Softness",   d:"Gentle materials designed for delicate baby skin.",   c:"#5FCBB0", bg:"rgba(95,203,176,.16)",
+  { t:"Softness",   d:"Gentle materials designed for delicate baby skin.",   c:"#55A020", bg:"rgba(108,189,48,.16)",
     i:'<path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/>' },
-  { t:"Absorption", d:"Reliable protection to help keep babies dry.",        c:"#7FC0EE", bg:"rgba(127,192,238,.18)",
+  { t:"Absorption", d:"Reliable protection to help keep babies dry.",        c:"#0A61B0", bg:"rgba(10,97,176,.14)",
     i:'<path d="M12 3s6.5 5.6 6.5 10.4a6.5 6.5 0 0 1-13 0C5.5 8.6 12 3 12 3z"/>' },
-  { t:"Comfort",    d:"Designed to allow babies to move comfortably.",       c:"#FFC648", bg:"rgba(255,198,72,.20)",
+  { t:"Comfort",    d:"Designed to allow babies to move comfortably.",       c:"#4FA3E3", bg:"rgba(79,163,227,.18)",
     i:'<circle cx="12" cy="12" r="9"/><path d="M8.5 14.5s1.3 1.8 3.5 1.8 3.5-1.8 3.5-1.8M9 9.5h.01M15 9.5h.01"/>' },
-  { t:"Durability", d:"Dependable construction for everyday use.",           c:"#FFAFC0", bg:"rgba(255,175,192,.22)",
+  { t:"Durability", d:"Dependable construction for everyday use.",           c:"#6CBD30", bg:"rgba(155,214,79,.22)",
     i:'<path d="M12 2.6 4.2 6v6c0 4.8 3.3 8.7 7.8 9.8 4.5-1.1 7.8-5 7.8-9.8V6L12 2.6z"/><path d="M9 12l2.2 2.2L15.4 10"/>' }
 ];
 /* ===================== end of edit block ============================ */
 
 const wa = t => "https://wa.me/" + BIZ.whatsapp + "?text=" + encodeURIComponent(t);
 
-/* ---- product artwork (SVG, swapped for real photos when they arrive) ---- */
+/* ---- product artwork in the brand blue + green (swap for real photos when they arrive) ---- */
 const ART = {
   diaper: `<svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="26" y="18" width="148" height="126" rx="20" fill="#5FCBB0"/>
-    <path d="M26 46h148v70a20 20 0 0 1-20 20H46a20 20 0 0 1-20-20V46z" fill="#4FBFA3"/>
-    <rect x="26" y="18" width="148" height="30" rx="15" fill="#7FDBC4"/>
-    <path d="M62 96c0-13 17-22 38-22s38 9 38 22c0 16-17 28-38 28s-38-12-38-28z" fill="#fff" opacity=".95"/>
-    <path d="M78 90c8 5 16 7 22 7s14-2 22-7" stroke="#5FCBB0" stroke-width="4" stroke-linecap="round"/>
-    <circle cx="100" cy="60" r="9" fill="#FFC648"/>
+    <rect x="26" y="18" width="148" height="126" rx="20" fill="#6CBD30"/>
+    <path d="M26 46h148v70a20 20 0 0 1-20 20H46a20 20 0 0 1-20-20V46z" fill="#5BAA26"/>
+    <rect x="26" y="18" width="148" height="30" rx="15" fill="#8ACF56"/>
+    <path d="M62 96c0-13 17-22 38-22s38 9 38 22c0 16-17 28-38 28s-38-12-38-28z" fill="#fff" opacity=".96"/>
+    <path d="M78 90c8 5 16 7 22 7s14-2 22-7" stroke="#0A61B0" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="100" cy="60" r="9" fill="#0A61B0"/>
     <rect x="72" y="126" width="56" height="7" rx="3.5" fill="#fff" opacity=".55"/>
   </svg>`,
   wipes: `<svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="18" y="42" width="164" height="94" rx="24" fill="#7FC0EE"/>
-    <rect x="18" y="42" width="164" height="30" rx="15" fill="#95CDF3"/>
-    <rect x="66" y="26" width="68" height="30" rx="13" fill="#5FA9DE"/>
-    <rect x="74" y="34" width="52" height="14" rx="7" fill="#EAF4FD"/>
-    <path d="M52 104c14-9 30-9 44 0s30 9 44 0" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".9"/>
-    <circle cx="100" cy="122" r="7" fill="#FFC648"/>
+    <rect x="18" y="42" width="164" height="94" rx="24" fill="#0A61B0"/>
+    <rect x="18" y="42" width="164" height="30" rx="15" fill="#2E7BC4"/>
+    <rect x="66" y="26" width="68" height="30" rx="13" fill="#034A98"/>
+    <rect x="74" y="34" width="52" height="14" rx="7" fill="#E6F1FC"/>
+    <path d="M52 104c14-9 30-9 44 0s30 9 44 0" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".92"/>
+    <circle cx="100" cy="122" r="7" fill="#6CBD30"/>
   </svg>`,
   care: `<svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="30" y="56" width="46" height="84" rx="16" fill="#FFC648"/>
-    <rect x="44" y="36" width="18" height="24" rx="7" fill="#E8A81E"/>
-    <rect x="38" y="86" width="30" height="26" rx="7" fill="#fff" opacity=".85"/>
-    <rect x="86" y="72" width="42" height="68" rx="15" fill="#FFAFC0"/>
-    <rect x="98" y="54" width="18" height="22" rx="7" fill="#EE8C9F"/>
-    <rect x="93" y="96" width="28" height="22" rx="6" fill="#fff" opacity=".85"/>
-    <rect x="138" y="88" width="38" height="52" rx="14" fill="#7FC0EE"/>
-    <rect x="149" y="72" width="16" height="20" rx="6" fill="#5FA9DE"/>
-    <rect x="144" y="106" width="26" height="18" rx="5" fill="#fff" opacity=".85"/>
+    <rect x="30" y="56" width="46" height="84" rx="16" fill="#6CBD30"/>
+    <rect x="44" y="36" width="18" height="24" rx="7" fill="#55A020"/>
+    <rect x="38" y="86" width="30" height="26" rx="7" fill="#fff" opacity=".88"/>
+    <rect x="86" y="72" width="42" height="68" rx="15" fill="#4FA3E3"/>
+    <rect x="98" y="54" width="18" height="22" rx="7" fill="#0A61B0"/>
+    <rect x="93" y="96" width="28" height="22" rx="6" fill="#fff" opacity=".88"/>
+    <rect x="138" y="88" width="38" height="52" rx="14" fill="#9BD64F"/>
+    <rect x="149" y="72" width="16" height="20" rx="6" fill="#6CBD30"/>
+    <rect x="144" y="106" width="26" height="18" rx="5" fill="#fff" opacity=".88"/>
   </svg>`,
   value: `<svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="22" y="76" width="86" height="66" rx="16" fill="#7FC0EE"/>
-    <rect x="22" y="76" width="86" height="18" rx="9" fill="#95CDF3"/>
-    <rect x="94" y="60" width="84" height="82" rx="18" fill="#5FCBB0"/>
-    <rect x="94" y="60" width="84" height="20" rx="10" fill="#7FDBC4"/>
-    <circle cx="136" cy="106" r="21" fill="#fff" opacity=".95"/>
-    <path d="M129 113l14-14M131 100.5h.01M141 111.5h.01" stroke="#3FAE93" stroke-width="4" stroke-linecap="round"/>
-    <circle cx="62" cy="116" r="13" fill="#fff" opacity=".9"/>
-    <path d="M56.5 116h11M62 110.5v11" stroke="#5FA9DE" stroke-width="4" stroke-linecap="round"/>
-    <g transform="rotate(-14 60 44)"><rect x="30" y="26" width="60" height="30" rx="12" fill="#FFC648"/>
-    <text x="60" y="47" text-anchor="middle" font-family="Fredoka,sans-serif" font-size="17" font-weight="600" fill="#7A4F00">SAVE</text></g>
+    <rect x="22" y="76" width="86" height="66" rx="16" fill="#0A61B0"/>
+    <rect x="22" y="76" width="86" height="18" rx="9" fill="#2E7BC4"/>
+    <rect x="94" y="60" width="84" height="82" rx="18" fill="#6CBD30"/>
+    <rect x="94" y="60" width="84" height="20" rx="10" fill="#8ACF56"/>
+    <circle cx="136" cy="106" r="21" fill="#fff" opacity=".96"/>
+    <path d="M129 113l14-14M131 100.5h.01M141 111.5h.01" stroke="#55A020" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="62" cy="116" r="13" fill="#fff" opacity=".92"/>
+    <path d="M56.5 116h11M62 110.5v11" stroke="#0A61B0" stroke-width="4" stroke-linecap="round"/>
+    <g transform="rotate(-14 60 44)"><rect x="30" y="26" width="60" height="30" rx="12" fill="#034A98"/>
+    <text x="60" y="47" text-anchor="middle" font-family="Fredoka,sans-serif" font-size="17" font-weight="600" fill="#fff">SAVE</text></g>
   </svg>`
 };
 
-/* ---- hero pack ---- */
-document.getElementById('heroPack').innerHTML = ART.diaper;
-
 /* ---- trust pills ---- */
-const PC = ["#5FCBB0","#7FC0EE","#FFC648","#FFAFC0"];
+const PC = ["#6CBD30","#0A61B0","#4FA3E3","#55A020"];
 document.getElementById('trust').innerHTML = TRUST.map((t,i)=>`
   <span class="pill"><i style="background:${PC[i%4]}22">
   <svg viewBox="0 0 24 24" fill="none" stroke="${PC[i%4]}" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
@@ -630,23 +616,19 @@ document.getElementById('cards').innerHTML = PRODUCTS.map(p=>`
     </dl>
     <div class="price">${p.price}</div>
     <div class="acts">
-      <a class="btn btn-mint btn-sm" href="${wa('Hello Baby Fresh! I would like to order: '+p.name+' ('+p.size+', '+p.qty+'). Please confirm availability and price.')}" target="_blank" rel="noopener">Order Now</a>
+      <a class="btn btn-green btn-sm" href="${wa('Hello Baby Fresh! I would like to order: '+p.name+' ('+p.size+', '+p.qty+'). Please confirm availability and price.')}" target="_blank" rel="noopener">Order Now</a>
       <a class="btn btn-line btn-sm" href="${wa('Hello Baby Fresh! I have a question about '+p.name+'.')}" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </article>`).join('');
 
 /* ---- values ---- */
 document.getElementById('vals').innerHTML = VALUES.map(v=>`
-  <div class="val rv" style="--a:${v.c}">
+  <div class="val rv">
     <span class="ic" style="background:${v.bg}">
       <svg viewBox="0 0 24 24" fill="none" stroke="${v.c}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${v.i}</svg>
     </span>
     <h3>${v.t}</h3><p>${v.d}</p>
   </div>`).join('');
-document.querySelectorAll('.val').forEach(el=>{
-  el.style.setProperty('--x','1');
-  el.querySelector('.ic');
-});
 
 /* ---- contact blocks ---- */
 const IC = {
@@ -660,11 +642,11 @@ document.getElementById('info').innerHTML = `
     <span class="ic" style="background:rgba(37,211,102,.16)"><svg viewBox="0 0 24 24" fill="#1FA855" stroke="none">${IC.wa}</svg></span>
     <span><small>Phone / WhatsApp</small><b>${BIZ.phoneShow}</b></span></a>
   <a href="mailto:${BIZ.email}">
-    <span class="ic" style="background:rgba(127,192,238,.18)"><svg viewBox="0 0 24 24" fill="none" stroke="#3D8DC6" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${IC.mail}</svg></span>
+    <span class="ic" style="background:rgba(10,97,176,.14)"><svg viewBox="0 0 24 24" fill="none" stroke="#0A61B0" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${IC.mail}</svg></span>
     <span><small>Email</small><b>${BIZ.email}</b></span></a>
-  <div><span class="ic" style="background:rgba(255,175,192,.22)"><svg viewBox="0 0 24 24" fill="none" stroke="#E8859B" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${IC.pin}</svg></span>
+  <div><span class="ic" style="background:rgba(108,189,48,.18)"><svg viewBox="0 0 24 24" fill="none" stroke="#55A020" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${IC.pin}</svg></span>
     <span><small>Location / Delivery Area</small><b>${BIZ.area}</b></span></div>
-  <div><span class="ic" style="background:rgba(255,198,72,.20)"><svg viewBox="0 0 24 24" fill="none" stroke="#D99B00" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${IC.clk}</svg></span>
+  <div><span class="ic" style="background:rgba(79,163,227,.18)"><svg viewBox="0 0 24 24" fill="none" stroke="#0A61B0" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${IC.clk}</svg></span>
     <span><small>Business Hours</small><b>${BIZ.hours}</b></span></div>`;
 
 document.getElementById('fcontact').innerHTML = `
